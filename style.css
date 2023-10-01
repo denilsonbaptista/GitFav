@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --bg-color: hsla(0, 0%, 0%, 1);
+
+  --bg-input-color: hsla(191, 65%, 7%, 1);
+  --ff-input-color: hsla(240, 6%, 51%, 1);
+  --bg-button-color: hsla(195, 91%, 25%, 1);
+  --ff-button-color: hsla(0, 0%, 100%, 1);
+  --bg-button-hover-color: hsla(0, 0%, 100%, 1);
+  --ff-button-hover-color: hsla(195, 91%, 25%, 1);
+}
+
+body,
+input,
+button {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  color: white;
+  background-color: var(--bg-color);
+}
+
+#app {
+  max-width: 112rem;
+  margin-inline: auto;
+  margin-top: 12rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-height: 4.8rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.search input {
+  padding: 1.6rem;
+  width: 46.2rem;
+  background-color: var(--bg-input-color);
+  border: none;
+  border-radius: 0.5rem;
+
+  color: var(--ff-input-color);
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+}
+
+.search button {
+  padding: 1.2rem 3.2rem;
+  border: 0;
+  border-radius: 0.5rem;
+  background-color: var(--bg-button-color);
+
+  color: var(--ff-button-color);
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.4rem;
+  text-transform: uppercase;
+
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+
+  cursor: pointer;
+}
+
+.search button:hover {
+  background-color: var(--bg-button-hover-color);
+  color: var(--ff-button-hover-color);
+}
+
+.search button:hover svg path {
+  fill: var(--ff-button-hover-color);
+}
