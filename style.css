@@ -10,14 +10,22 @@
 :root {
   font-size: 62.5%;
 
-  --bg-color: hsla(0, 0%, 0%, 1);
+  --bg-color: hsl(0, 0%, 0%);
 
-  --bg-input-color: hsla(191, 65%, 7%, 1);
-  --ff-input-color: hsla(240, 6%, 51%, 1);
-  --bg-button-color: hsla(195, 91%, 25%, 1);
-  --ff-button-color: hsla(0, 0%, 100%, 1);
-  --bg-button-hover-color: hsla(0, 0%, 100%, 1);
-  --ff-button-hover-color: hsla(195, 91%, 25%, 1);
+  --bg-input-color: hsl(190, 66%, 7%);
+  --ff-input-color: hsl(240, 6%, 51%);
+  --bg-button-color: hsl(195, 91%, 25%);
+  --ff-button-color: hsl(0, 0%, 100%);
+  --bg-button-hover-color: hsl(0, 0%, 100%);
+  --ff-button-hover-color: hsl(195, 91%, 25%);
+
+  --tb-bg-head-color: hsl(194, 73%, 13%);
+  --tb-ff-head-color: hsl(240, 9%, 89%);
+  --tb-border-color: hsl(191, 31%, 42%);
+  --tb-bg-tr-odd-color: hsl(194, 62%, 4%);
+  --tb-bg-tr-even-color: hsl(190, 66%, 7%);
+  --tb-border-tr-even-color: hsl(191, 31%, 42%);
+  --tb-tr-remover-color: hsl(355, 91%, 66%);
 }
 
 body,
@@ -103,4 +111,82 @@ header {
 
 .search button:hover svg path {
   fill: var(--ff-button-hover-color);
+}
+
+.wrapper {
+  margin-top: 9rem;
+  border: 1px solid var(--tb-border-color);
+  border-radius: 1.2rem;
+  overflow: hidden;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table * {
+  font-size: 2rem;
+  color: var(--tb-ff-head-color);
+}
+
+table th {
+  padding: 1.6rem 4rem;
+  text-align: left;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 160%;
+  background-color: var(--tb-bg-head-color);
+}
+
+table tr:nth-child(odd) {
+  background-color: var(--tb-bg-tr-odd-color)
+}
+
+table tr:nth-child(even) {
+  background-color: var(--tb-bg-tr-even-color);
+  border: 1px solid var(--tb-border-tr-even-color);
+}
+
+table td {
+  padding: 2.4rem 4rem;
+}
+
+td.user {
+  display: flex;
+  gap: 1.6rem;
+}
+
+td.user img {
+  width: 5.6rem;
+  height: 5.6rem;
+  border-radius: 50%;
+}
+
+td.user a {
+  text-decoration: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+td,
+td.user p,
+td.user span,
+td .remove {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+}
+
+td.user span {
+  font-weight: 400;
+}
+
+.remove {
+  background: none;
+  border: none;
+  color: var(--tb-tr-remover-color);
+  cursor: pointer;
 }
