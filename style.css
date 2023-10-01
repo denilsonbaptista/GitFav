@@ -140,7 +140,7 @@ table th {
 }
 
 table tr:nth-child(odd) {
-  background-color: var(--tb-bg-tr-odd-color)
+  background-color: var(--tb-bg-tr-odd-color);
 }
 
 table tr:nth-child(even) {
