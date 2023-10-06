@@ -52,6 +52,7 @@ export class FavoritesView extends Favorites {
     super(root)
 
     this.tboby = this.root.querySelector("table tbody")
+    this.wrapper = this.root.querySelector(".wrapper")
 
     this.update()
     this.onadd()
@@ -60,7 +61,9 @@ export class FavoritesView extends Favorites {
   onadd() {
     const addButton = this.root.querySelector(".search button")
 
-    addButton.onclick = () => {
+    addButton.onclick = (event) => {
+      event.preventDefault()
+
       const { value } = this.root.querySelector(".search input")
       this.add(value)
 
@@ -70,6 +73,7 @@ export class FavoritesView extends Favorites {
 
   update() {
     this.removeAllTr()
+    this.checkFavorites()
 
     this.entries.forEach((user) => {
       const row = this.createRow()
@@ -115,6 +119,30 @@ export class FavoritesView extends Favorites {
     `
 
     return tr
+  }
+
+  checkFavorites() {
+    const removeNoFavorites = this.root.querySelector(".no-favorites")
+    const empty = this.entries.length <= 0
+
+    if (empty) {
+      this.createNoFavorites()
+    } else if (removeNoFavorites) {
+      removeNoFavorites.remove()
+    }
+  }
+
+  createNoFavorites() {
+    const noFavorites = document.createElement("div")
+
+    noFavorites.classList.add("no-favorites")
+
+    noFavorites.innerHTML = `
+      <img src="./assets/Estrela.svg" alt="" />
+      <p>Nenhum favorito ainda</p>
+    `
+
+    this.wrapper.append(noFavorites)
   }
 
   removeAllTr() {

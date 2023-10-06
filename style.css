@@ -26,6 +26,9 @@
   --tb-bg-tr-even-color: hsl(190, 66%, 7%);
   --tb-border-tr-even-color: hsl(191, 31%, 42%);
   --tb-tr-remover-color: hsl(355, 91%, 66%);
+
+  --no-favorites-p-color: hsl(189, 4%, 32%);
+  --no-favorites-bg-color: hsl(192, 63%, 3%);
 }
 
 body,
@@ -40,7 +43,7 @@ body {
 }
 
 #app {
-  max-width: 112rem;
+  width: min(112rem, 90%);
   margin-inline: auto;
   margin-top: 12rem;
 }
@@ -189,4 +192,28 @@ td.user span {
   border: none;
   color: var(--tb-tr-remover-color);
   cursor: pointer;
+}
+
+.no-favorites {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 21rem 0 28rem;
+  gap: 6rem;
+
+  background-color: var(--no-favorites-bg-color);
+}
+
+.no-favorites img {
+  width: 13.2rem;
+  height: 12.5rem;
+}
+
+.no-favorites p {
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.47rem;
+  color: var(--no-favorites-p-color);
 }
