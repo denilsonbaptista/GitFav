@@ -46,6 +46,7 @@ body {
   width: min(112rem, 90%);
   margin-inline: auto;
   margin-top: 12rem;
+  margin-bottom: 8rem;
 }
 
 header {
@@ -120,7 +121,8 @@ header {
   margin-top: 9rem;
   border: 1px solid var(--tb-border-color);
   border-radius: 1.2rem;
-  overflow: hidden;
+  max-height: 69rem;
+  overflow-y: auto;
 }
 
 table {
@@ -131,6 +133,11 @@ table {
 table * {
   font-size: 2rem;
   color: var(--tb-ff-head-color);
+}
+
+thead {
+  position: sticky;
+  top: 0;
 }
 
 table th {
@@ -216,4 +223,8 @@ td.user span {
   font-weight: 700;
   line-height: 2.47rem;
   color: var(--no-favorites-p-color);
+}
+
+.wrapper::-webkit-scrollbar {
+  width: 0;
 }
