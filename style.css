@@ -43,7 +43,7 @@ body {
 }
 
 #app {
-  width: min(112rem, 90%);
+  width: 112rem;
   margin-inline: auto;
   margin-top: 12rem;
   margin-bottom: 8rem;
